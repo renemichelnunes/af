@@ -20,7 +20,7 @@ af.transicao(q4, q4, ['c'])
 af.transicao(q5, q6, ['c'])
 af.transicao(q6, q6, ['d'])
 
-af.testa('ab')
+af.testa('abe')
 print()
 af.testa('abc')
 print()
