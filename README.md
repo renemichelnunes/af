@@ -1,5 +1,5 @@
 # af
-AF é uma classe em python usada para criar e testar autômatos finitos determinísticos e não-determinísticos. Para criar um autômato, primeiro importe a classe, defina a instância do autômato, crie os estados e defina as transições.
+AF é uma classe em python usada para criar e testar autômatos finitos determinísticos e não-determinísticos. Para criar um autômato, primeiro importe a classe, defina a instância do autômato, crie os estados e defina as transições. Use-a com a versão 3 do python.
 
 # Como importar a classe
 from af import AF, estado
