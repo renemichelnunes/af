@@ -151,14 +151,18 @@ class AF():
         lin = 0
         lina = 0
         for i in pal:
-            lina = lin
-            print("{}={}".format(estados[lin][0], self.alfabeto[int(i)]))
-            #print("{} {}".format(lin, int(i)))
-            lin = tabela2[lin][int(i)]
-            if lin == []:
-                break
-            else:
+            try:
                 lina = lin
+                print("{}={}".format(estados[lin][0], self.alfabeto[int(i)]))
+                #print("{} {}".format(lin, int(i)))
+                lin = tabela2[lin][int(i)]
+                if lin == []:
+                    break
+                else:
+                    lina = lin
+            except Exception:
+                print('símbolo [{}] não faz parte do alfabeto, rejeitada'.format(i))
+                return
 
         if lin != [] and set(self.final).intersection(estados[lin]):
             print("estado final {} aceito".format(estados[lin][0]))
