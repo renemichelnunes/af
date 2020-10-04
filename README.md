@@ -50,7 +50,7 @@ af.transicao(q0, q0, ['b'])
 af.transicao(q0, q0, ['n'])
 
 # Métodos
-O autômato possui dois métodos, 'imprime_automato()' mostra uma lista com as transições, e 'testa(palavra)' é usado para verificar se a palavra faz parte da linguagem processada pelo autômato ex:
+A classe AF possui dois métodos, 'imprime_automato()' mostra uma lista com as transições, e 'testa(palavra)' é usado para verificar se a palavra faz parte da linguagem processada pelo autômato ex:
 
 
 Imprime o autômato:
