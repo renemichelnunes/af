@@ -206,7 +206,8 @@ class AF():
                                 for el in est.elementos:
                                     if el == alfa:
                                         #print('{} {} {}'.format(est.de.nome, est.para.nome, el))
-                                        temp.append(est.para.nome)
+                                        if est.para.nome not in temp:
+                                            temp.append(est.para.nome)
                     temp.sort()
                     if temp != []:
                         #print('tabela[{}][{}]={}'.format(estados.index(i), self.alfabeto.index(alfa), temp))
