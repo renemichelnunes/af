@@ -267,6 +267,7 @@ class AF():
         self.alfabeto = af.alfabeto.copy()
         self.inicial = af.inicial.copy()
         self.final = af.final.copy()
+        self.final.sort(key=lambda x: int(x[1:]))
         self.estados = af.estados.copy()
         #print('enumerando os estados')
         estados2 = []
