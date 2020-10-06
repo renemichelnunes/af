@@ -284,6 +284,8 @@ convertido para determinístico
 
 ![Alt text](ex2-2.jpg?raw=true "Title")
 
+Note que para efeito didático os estados não alcançáveis [q2, q3, q5] são mostrados e não removidos do autômato, isso não influencia a execução.
+
 q0->q7 ['a']
 
 q1->q8 ['b']
