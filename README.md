@@ -192,7 +192,7 @@ B=b
 estado final C aceito
 
 
-No caso de um autômato não determinístico, o método 'testa(palavra)' detecta, converte e atualiza para determinístico, e depois prosegue com teste da palavra. 
+No caso de um autômato não determinístico, o método 'testa(palavra)' detecta, converte e atualiza para determinístico, e depois prossegue com teste da palavra. 
 
 
 ![Alt text](ex2.jpg?raw=true "Title")
