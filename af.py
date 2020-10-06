@@ -217,7 +217,9 @@ class AF():
                     if len(temp) > 1 and temp not in estados:
                         print('novo estado! {}'.format(temp))
                         estados.append(temp) # acrescente na lista de estados
-                        tabela.append([[], [], [], []]) # adicione uma linha na tabela de transições
+                        for i in self.alfabeto:
+                            linha.append([])
+                        tabela.append(linha) # adicione uma linha na tabela de transições
             
     
         print('lista de estados atualizada')
