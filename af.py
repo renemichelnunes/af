@@ -221,7 +221,7 @@ class AF():
                             linha.append([])
                         tabela.append(linha) # adicione uma linha na tabela de transições
             
-    
+        estados.sort(key=lambda x: int(x[0][1:]))
         #print('lista de estados atualizada')
         #print(estados)
         # imprime a tabela de transições
