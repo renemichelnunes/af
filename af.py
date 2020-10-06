@@ -89,7 +89,10 @@ class AF():
                 estados.append([i.de.nome])
             if [i.para.nome] not in estados:
                 estados.append([i.para.nome])
-        estados.sort(key=lambda x: int(x[0][1:]))
+        try:
+            estados.sort(key=lambda x: int(x[0][1:]))
+        except Exception:
+            estados.sort()
         print('estados {}'.format(estados))
         print('inicial {}'.format(self.inicial))
         print('finais {}'.format(self.final))
@@ -178,7 +181,10 @@ class AF():
                 estados.append([i.de.nome])
             if [i.para.nome] not in estados:
                 estados.append([i.para.nome])
-        estados.sort(key=lambda x: int(x[0][1:]))
+        try:
+            estados.sort(key=lambda x: int(x[0][1:]))
+        except Exception:
+            estados.sort()
         #print(estados)
 
         #print('criando tabela vazia de transições')
@@ -209,7 +215,10 @@ class AF():
                                         #print('{} {} {}'.format(est.de.nome, est.para.nome, el))
                                         if est.para.nome not in temp:
                                             temp.append(est.para.nome)
-                    temp.sort(key=lambda x: int(x[1:]))
+                    try:
+                        temp.sort(key=lambda x: int(x[1:]))
+                    except Exception:
+                        temp.sort()
                     if temp != []:
                         #print('tabela[{}][{}]={}'.format(estados.index(i), self.alfabeto.index(alfa), temp))
                         tabela[estados.index(i)][self.alfabeto.index(alfa)] = temp
@@ -271,7 +280,10 @@ class AF():
         self.alfabeto = af.alfabeto.copy()
         self.inicial = af.inicial.copy()
         self.final = af.final.copy()
-        self.final.sort(key=lambda x: int(x[1:]))
+        try:
+            self.final.sort(key=lambda x: int(x[1:]))
+        except Exception:
+            self.final.sort()
         self.estados = af.estados.copy()
         #print('enumerando os estados')
         estados2 = []
