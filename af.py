@@ -89,7 +89,7 @@ class AF():
                 estados.append([i.de.nome])
             if [i.para.nome] not in estados:
                 estados.append([i.para.nome])
-        estados.sort()
+        estados.sort(key=lambda x: int(x[0][1:]))
         print('estados {}'.format(estados))
         print('inicial {}'.format(self.inicial))
         print('finais {}'.format(self.final))
