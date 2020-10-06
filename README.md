@@ -46,7 +46,9 @@ af.transicao(q0, q0, ['a', 'b', ...])
 Ou separadamente para cada símbolo:
 
 af.transicao(q0, q0, ['a'])
+
 af.transicao(q0, q0, ['b'])
+
 af.transicao(q0, q0, ['n'])
 
 # Métodos
@@ -101,7 +103,7 @@ estado q8 rejeitado
 # Exemplo prático
 Autômato que reconhece palavras terminadas em 'b':
 
-
+![Alt text](ex1.jpg?raw=true "Title")
 
 from af import AF, estado
 
@@ -193,6 +195,8 @@ estado final C aceito
 No caso de um autômato não determinístico, o método 'testa(palavra)' detecta, converte e atualiza para determinístico, e depois prosegue com teste da palavra. 
 
 
+![Alt text](ex2.jpg?raw=true "Title")
+
 from af import AF, estado
 
 
@@ -276,6 +280,9 @@ q6->q6 ['d']
 
 
 convertido para determinístico
+
+
+![Alt text](ex2-2.jpg?raw=true "Title")
 
 q0->q7 ['a']
 
