@@ -35,6 +35,7 @@ class AF():
 
     def __eh_afnd(self):
         #print('enumerando os estados')
+        print('eh_afnd')
         estados = []
         for i in self.estados:
             if [i.de.nome] not in estados:
@@ -89,10 +90,7 @@ class AF():
                 estados.append([i.de.nome])
             if [i.para.nome] not in estados:
                 estados.append([i.para.nome])
-        try:
-            estados.sort(key=lambda x: int(x[0][1:]))
-        except Exception:
-            estados.sort()
+        estados.sort()
         print('estados {}'.format(estados))
         print('inicial {}'.format(self.inicial))
         print('finais {}'.format(self.final))
@@ -174,35 +172,32 @@ class AF():
             print("estado {} rejeitado".format(estados[lina][0]))
 
     def __afnd(self):
-        #print('enumerando os estados')
+        print('afnd')
+        print('enumerando os estados')
         estados = []
         for i in self.estados:
             if [i.de.nome] not in estados:
                 estados.append([i.de.nome])
             if [i.para.nome] not in estados:
                 estados.append([i.para.nome])
-        try:
-            estados.sort(key=lambda x: int(x[0][1:]))
-        except Exception:
-            estados.sort()
-        #print(estados)
+        estados.sort()
+        print(estados)
 
-        #print('criando tabela vazia de transições')
+        print('criando tabela vazia de transições')
         tabela = []
         for i in estados:
             linha = []
             for j in self.alfabeto:
                 linha.append([])
             tabela.append(linha)
-        #print(self.alfabeto)
+        print(self.alfabeto)
         # imprime a tabela de transições
-        #cont = 0
-        #for i in tabela:
-            #print('{}{}'.format(estados[cont][0], i))
-            #cont += 1
+        cont = 0
+        for i in tabela:
+            print('{}{}'.format(estados[cont][0], i))
+            cont += 1
 
-        #print('analisando cada estado em sequencia a partir do inicial')
-        #eh_afnd = False
+        print('analisando cada estado em sequencia a partir do inicial')
         for i in estados:
             if len(i) > 0: # estados compostos
                 for alfa in self.alfabeto:
@@ -212,33 +207,27 @@ class AF():
                             if est.de.nome == est2:
                                 for el in est.elementos:
                                     if el == alfa:
-                                        #print('{} {} {}'.format(est.de.nome, est.para.nome, el))
+                                        print('{} {} {}'.format(est.de.nome, est.para.nome, el))
                                         if est.para.nome not in temp:
                                             temp.append(est.para.nome)
-                    try:
-                        temp.sort(key=lambda x: int(x[1:]))
-                    except Exception:
-                        temp.sort()
+                    temp.sort()
                     if temp != []:
-                        #print('tabela[{}][{}]={}'.format(estados.index(i), self.alfabeto.index(alfa), temp))
+                        print('tabela[{}][{}]={}'.format(estados.index(i), self.alfabeto.index(alfa), temp))
                         tabela[estados.index(i)][self.alfabeto.index(alfa)] = temp
                     if len(temp) > 1 and temp not in estados:
-                        #print('novo estado! {}'.format(temp))
+                        print('novo estado! {}'.format(temp))
                         estados.append(temp) # acrescente na lista de estados
-                        linha = []
-                        for i in self.alfabeto:
-                            linha.append([])
-                        tabela.append(linha) # adicione uma linha na tabela de transições
+                        tabela.append([[], [], [], []]) # adicione uma linha na tabela de transições
             
-        #estados.sort(key=lambda x: int(x[0][1:]))
-        #print('lista de estados atualizada')
-        #print(estados)
+    
+        print('lista de estados atualizada')
+        print(estados)
         # imprime a tabela de transições
-        #print('tabela de transições atualizada')
-        #cont = 0
-        #for i in tabela:
-            #print('q{} {}'.format(cont, i))
-            #cont += 1
+        print('tabela de transições atualizada')
+        cont = 0
+        for i in tabela:
+            print('q{} {}'.format(cont, i))
+            cont += 1
 
         af = AF(self.alfabeto)
         print('este autômato é não determinístico')
@@ -280,10 +269,7 @@ class AF():
         self.alfabeto = af.alfabeto.copy()
         self.inicial = af.inicial.copy()
         self.final = af.final.copy()
-        try:
-            self.final.sort(key=lambda x: int(x[1:]))
-        except Exception:
-            self.final.sort()
+        self.final.sort(key=lambda x: int(x[1:]))
         self.estados = af.estados.copy()
         #print('enumerando os estados')
         estados2 = []
