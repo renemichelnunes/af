@@ -209,7 +209,7 @@ class AF():
                                         #print('{} {} {}'.format(est.de.nome, est.para.nome, el))
                                         if est.para.nome not in temp:
                                             temp.append(est.para.nome)
-                    temp.sort()
+                    temp.sort(key=lambda x: int(x[1:]))
                     if temp != []:
                         #print('tabela[{}][{}]={}'.format(estados.index(i), self.alfabeto.index(alfa), temp))
                         tabela[estados.index(i)][self.alfabeto.index(alfa)] = temp
