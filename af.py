@@ -93,6 +93,7 @@ class AF():
         print('estados {}'.format(estados))
         print('inicial {}'.format(self.inicial))
         print('finais {}'.format(self.final))
+        print('inalcançáveis {}'.format(self.inalcancaveis))
         print('alfabeto {}'.format(self.alfabeto))
 
         #print('criando tabela vazia de transições')
